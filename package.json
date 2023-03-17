@@ -1,0 +1,15 @@
+{
+  "name": "musicplayer",
+  "version": "1.0.0",
+  "description": "A music player thats made in Electron. Designed to play both online music from the internet, and offline files on your local pc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^23.1.4"
+  }
+}
