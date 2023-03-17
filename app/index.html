@@ -7,9 +7,15 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/fba7d8fe93.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="./audioManager.js" defer></script>
 </head>
 
 <body>
+
+    <!-- The main audio thing -->
+    <audio style="display: none;" src="file:///C:/Users/max/Music/Baby%20blue.mp3"></audio>
+
+
 
 
     <!-- Music player controls -->
@@ -22,7 +28,7 @@
         </div>
 
         <div class="bottom-row">
-            <input id="progressBar" type="range">
+            <input id="progressBar" type="range" value="0" min="0" max="1000">
         </div>
         
 
