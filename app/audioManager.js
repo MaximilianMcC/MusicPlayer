@@ -2,10 +2,11 @@ const musicPlayer = document.querySelector("audio");
 const progressBar = document.querySelector("#progressBar");
 
 
+
+
 // Check for if the music needs to be played or paused
 const playPauseButton = document.querySelector("#playPauseButton");
 let playing = false;
-
 playPauseButton.addEventListener("click", () => {
 
     // Toggle the button
@@ -44,12 +45,16 @@ musicPlayer.addEventListener("timeupdate", () => {
 
 
 
+
 // Update the progress bar when it's modified
 progressBar.addEventListener("input", () => {
-    
+
     // Convert the percentage into time in seconds
     const totalDuration = musicPlayer.duration;
     const newTime = (progressBar.value / 1000) * totalDuration;
+
+    // Check for if it's ended. If it has then play it again
+    if (musicPlayer.ended) musicPlayer.play();
 
     // Update the audio time
     musicPlayer.currentTime = newTime;
