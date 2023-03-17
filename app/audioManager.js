@@ -1,4 +1,5 @@
 const musicPlayer = document.querySelector("audio");
+const progressBar = document.querySelector("#progressBar");
 
 
 // Check for if the music needs to be played or paused
@@ -28,7 +29,7 @@ playPauseButton.addEventListener("click", () => {
 
 
 
-// Update the progress bar
+// Update the progress bar as the song plays
 musicPlayer.addEventListener("timeupdate", () => {
 
     // Find out how much of the bar should be filled
@@ -37,10 +38,19 @@ musicPlayer.addEventListener("timeupdate", () => {
     const progressPercentage = (currentTime / totalDuration) * 1000;
 
     // Update the progress bar
-    document.querySelector("#progressBar").value = progressPercentage;
+    progressBar.value = progressPercentage;
 });
 
 
 
 
+// Update the progress bar when it's modified
+progressBar.addEventListener("input", () => {
+    
+    // Convert the percentage into time in seconds
+    const totalDuration = musicPlayer.duration;
+    const newTime = (progressBar.value / 1000) * totalDuration;
 
+    // Update the audio time
+    musicPlayer.currentTime = newTime;
+});
