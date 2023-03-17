@@ -28,3 +28,10 @@ Below is a list of general ideas that I have when I'm making the project.
 - Blurred background of cover image. Could change entire programs theme by getting average color
 - Very complex, but could be cool if it works. Something that can suggest other songs to you based off the songs you have in your library
 - Way to share songs and playlists between people who also use the program. Could be a friend system, or a file that you send over.
+
+## Cloning/downloading
+If you would like to download and use or edit this music player, you must download the specified NodeJS modules:
+| Module name       | What it's purpose is/why                 | Install command                 |
+|:-----------------:|:----------------------------------------:|:-------------------------------:|
+| Electron          | Makes it a desktop app                   | `npm install electron`          |
+| Electron Settings | Adds a way to store settings in Electron | `npm install electron-settings` |
