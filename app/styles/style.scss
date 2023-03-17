@@ -1,6 +1,74 @@
+//#cf4444
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    overflow: hidden;
+    background-color: #14171a;
+}
+
+
+// Bottom section with player controls
+.player-controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 25%;
+
+    background-color: #1a2027;
+
+    // Buttons
+    button {
+        font-size: 3rem;
+        border: none;
+        border-radius: 100%;
+        width: 75px;
+        height: 75px;
+        margin-bottom: 20px;
+
+        background-color: transparent;
+        color: white;
+
+        //TODO: Fancy hover thing when you hover over the buttons
+
+        // Main play and pause button
+        &#playPauseButton {
+            color: #101010; 
+            background-color: white;
+        }        
+    }
+
+    // progress bar
+    #progressBar {
+        width: 50%;
+        color: #005cc8; //TODO: Make this work
+    }
+
+
+    // Item alignment
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .top-row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .bottom-row {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+.row {
+    display: flex;
+    justify-content: center;
+}

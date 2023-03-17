@@ -2,4 +2,52 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  overflow: hidden;
+  background-color: #14171a;
+}
+
+.player-controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 25%;
+  background-color: #1a2027;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.player-controls button {
+  font-size: 3rem;
+  border: none;
+  border-radius: 100%;
+  width: 75px;
+  height: 75px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  color: white;
+}
+.player-controls button#playPauseButton {
+  color: #101010;
+  background-color: white;
+}
+.player-controls #progressBar {
+  width: 50%;
+  color: #005cc8;
+}
+.player-controls .top-row {
+  display: flex;
+  justify-content: center;
+}
+.player-controls .bottom-row {
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */

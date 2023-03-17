@@ -4,6 +4,9 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
+require('electron-reload')(__dirname);
+
+
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -15,7 +18,7 @@ const createWindow = () => {
 
   // and load the index.html of the app.
   mainWindow.loadFile('./app/index.html')
-
+  mainWindow.setMenu(null)
   // Open the DevTools.
 //   mainWindow.webContents.openDevTools()
 }
