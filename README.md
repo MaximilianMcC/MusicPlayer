@@ -4,7 +4,7 @@ A music player thats made in Electron. Designed to play both online music from t
 ## Planned Features
 - [x] Play/pause
 - [x] Progress bar thing
-- [ ] Volume slider
+- [x] Volume slider
 - [ ] Way to add and remove songs
 - [ ] Looping songs
 - [ ] Way to get all songs on pc from specified directory
@@ -33,5 +33,7 @@ Below is a list of general ideas that I have when I'm making the project.
 If you would like to download and use or edit this music player, you must download the specified NodeJS modules:
 | Module name       | What it's purpose is/why                 | Install command                 |
 |:-----------------:|:----------------------------------------:|:-------------------------------:|
-| Electron          | Makes it a desktop app                   | `npm install electron`          |
-| Electron Settings | Adds a way to store settings in Electron | `npm install electron-settings` |
+| Electron          | Makes it a desktop app                   | `npm i electron`                |
+| Electron Settings | Adds a way to store settings in Electron | `npm i electron-settings`       |
+| Discord RPC       | Adds Discord rich presence               | `npm i discord-rich-presence`   |
+| Node ID3          | Support for reading and writing ID3 info | `npm i node-id3`                |
