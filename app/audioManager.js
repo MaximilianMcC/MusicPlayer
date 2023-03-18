@@ -59,3 +59,13 @@ progressBar.addEventListener("input", () => {
     // Update the audio time
     musicPlayer.currentTime = newTime;
 });
+
+
+
+
+// Check for if the current song should be looped or not
+document.querySelector("#loop").addEventListener("input", (e) => {
+
+    // Reverse whatever the current looping thing is
+    musicPlayer.loop = !musicPlayer.loop;
+});
