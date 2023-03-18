@@ -20,27 +20,27 @@
 
 
     <!-- Music player controls -->
-    <div class="player-controls">
+    <section class="player-controls">
         
         <!-- Previous song, play/pause, an next song buttons -->
-        <div class="top-row">
+        <div class="top-controls">            
             <button id="previousSongButton"><i class="fa-solid fa-backward-step"></i></button>
             <button id="playPauseButton"><i class="fa-solid fa-play"></i></button>
             <button id="nextSongButton"><i class="fa-solid fa-forward-step"></i></button>
         </div>
 
-        <!-- Progress bar thing -->
-        <div class="bottom-row">
+        <!-- Progress bar -->
+        <div class="bottom-controls">
             <input id="progressBar" type="range" value="0" min="0" max="1000">
         </div>
-        
-        <!-- Volume slider -->
-        <input id="volumeSlider" type="range" value="50" min="0" max="100">
 
-        <!-- Loop -->
-        <input id="loop" type="checkbox">
+        <!-- Volume slider, loop, shuffle -->
+        <div class="side-controls">
+            <input id="loop" type="checkbox">
+            <input id="volumeSlider" type="range" value="50" min="0" max="100">
+        </div>
 
-    </div>
+    </section>
 
 </body>
 </html>
