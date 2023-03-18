@@ -63,9 +63,21 @@ progressBar.addEventListener("input", () => {
 
 
 
+
 // Check for if the current song should be looped or not
 document.querySelector("#loop").addEventListener("input", (e) => {
 
     // Reverse whatever the current looping thing is
     musicPlayer.loop = !musicPlayer.loop;
+});
+
+
+
+
+
+document.querySelector("#volumeSlider").addEventListener("input", (e) => {
+
+    // Set the volume to the sliders value. Divide by 100 because the music player takes a number from 0-1
+    musicPlayer.volume = e.target.value / 100;
+
 });
