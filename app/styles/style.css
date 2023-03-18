@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  outline: none;
 }
 
 body {
@@ -35,7 +36,7 @@ body {
   width: 75px;
   height: 75px;
   background-color: transparent;
-  color: white;
+  color: #ffffff;
 }
 .player-controls .top-controls button#playPauseButton {
   color: #101010;
@@ -62,4 +63,13 @@ body {
 }
 .player-controls .side-controls #volumeSlider {
   -webkit-appearance: slider-vertical;
+}
+.player-controls .side-controls input[type=checkbox] {
+  display: none;
+}
+.player-controls .side-controls #loop + label {
+  color: #6c6b70;
+}
+.player-controls .side-controls #loop:checked + label {
+  color: #ffffff;
 }/*# sourceMappingURL=style.css.map */

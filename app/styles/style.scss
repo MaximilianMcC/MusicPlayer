@@ -1,11 +1,16 @@
 //#cf4444
 
+$icon-enabled: #ffffff;
+$icon-disabled: #6c6b70;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    outline: none;
 }
 
 body {
@@ -41,13 +46,13 @@ body {
             height: 75px;
     
             background-color: transparent;
-            color: white;
-    
+            color: $icon-enabled;
+
             //TODO: Fancy hover thing when you hover over the buttons
     
             // Main play and pause button
             &#playPauseButton {
-                color: #101010; 
+                color: #101010;
                 background-color: white;
             }        
         }
@@ -77,6 +82,18 @@ body {
         #volumeSlider {
             -webkit-appearance: slider-vertical;
         }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        #loop + label {
+            color: $icon-disabled;
+        }
+        #loop:checked + label {
+            color: $icon-enabled;
+        }
+
     }
 
 }
