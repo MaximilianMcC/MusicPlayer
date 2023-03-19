@@ -7,15 +7,24 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/fba7d8fe93.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="./songGetter.js" defer></script>
     <script src="./audioManager.js" defer></script>
     <script src="./shortcutManager.js" defer></script>
+    <script src="./id3Generator.js" defer></script>
 </head>
 
 <body>
 
     <!-- The main audio thing -->
-    <audio style="display: none;" src="file:///C:/Users/max/Music/Gypsy in my Mind.mp3"></audio>
+    <audio style="display: none;" src="file:///C:/Users/max/Music/helpurself You Can Call Me Gus.mp3"></audio>
 
+
+    <!-- DEBUG: ID3 adder -->
+    <input id="song" type="file" accept="mp3,audio/*">
+    <input id="name" type="text" placeholder="Name">
+    <input id="artist" type="text" placeholder="Artist">
+    <input id="image" type="file" accept="image/*" placeholder="Image">
+    <button id="generate">create id3</button>
 
 
     <!-- Music player controls -->
