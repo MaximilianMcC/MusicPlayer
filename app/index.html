@@ -49,24 +49,30 @@
                 <!-- Music player controls -->
                 <section class="player-controls">
             
-                    <!-- Previous song, play/pause, an next song buttons -->
+                    <!-- loop and volume slider -->
                     <div class="top-controls">
-                        <button id="previousSongButton"><i class="fa-solid fa-backward-step"></i></button>
-                        <button id="playPauseButton"><i class="fa-solid fa-play"></i></button>
-                        <button id="nextSongButton"><i class="fa-solid fa-forward-step"></i></button>
-                    </div>
-
-                    <!-- Progress bar -->
-                    <div class="bottom-controls">
-                        <input id="progressBar" type="range" value="0" min="0" max="1000">
-                    </div>
-                    
-                    <!-- Volume slider, loop, shuffle -->
-                    <div class="side-controls">
                         <input id="loop" type="checkbox">
                         <label for="loop"><i class="fa-solid fa-repeat"></i></label>
+
                         <input id="volumeSlider" type="range" value="50" min="0" max="100">
+
+                        <input id="shuffle" type="checkbox">
+                        <label for="shuffle"><i class="fa-solid fa-shuffle"></i></label>
                     </div>
+
+                    <div class="bottom-controls">
+                        <!-- Previous song, play/pause, and next song buttons -->
+                        <div class="media-buttons">
+                            <button id="previousSongButton"><i class="fa-solid fa-backward-step"></i></button>
+                            <button id="playPauseButton"><i class="fa-solid fa-play"></i></button>
+                            <button id="nextSongButton"><i class="fa-solid fa-forward-step"></i></button>
+                        </div>
+
+                        <!-- Progress bar -->
+                        <input id="progressBar" type="range" value="0" min="0" max="1000">
+
+                    </div>
+
                 </section>
             </section>
 
