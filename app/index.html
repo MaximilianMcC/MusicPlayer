@@ -18,39 +18,56 @@
     <!-- The main audio thing -->
     <audio style="display: none;" src="file:///C:/Users/max/Music/helpurself You Can Call Me Gus.mp3"></audio>
 
+    <main>
 
-    <!-- DEBUG: ID3 adder -->
-    <input id="song" type="file" accept="mp3,audio/*">
-    <input id="name" type="text" placeholder="Name">
-    <input id="artist" type="text" placeholder="Artist">
-    <input id="image" type="file" accept="image/*" placeholder="Image">
-    <button id="generate">create id3</button>
+        <div class="app-wrapper">
 
+            <!-- List of songs. Online and offline. -->
+            <section class="song-list">
+                <h1>Song list</h1>
+            </section>
+            
+            <!-- The place where the actual music player is -->
+            <section class="player">
+                <!-- Song name, artist, and image -->
+                <section class="song-info">
+                    <!-- Blurred background image -->
+                    <div class="background">
+                        <img src="../test.jpg" alt="Background Image">
+                    </div>
+                    <!-- Cover image, title, artist -->
+                    <div class="song-info">
+                        <img src="../test.jpg" alt="Cover image">
+                        <h1>Mask</h1>
+                        <h2>Dream</h2>
+                    </div>
+                </section>
+                <!-- Music player controls -->
+                <section class="player-controls">
+            
+                    <!-- Previous song, play/pause, an next song buttons -->
+                    <div class="top-controls">
+                        <button id="previousSongButton"><i class="fa-solid fa-backward-step"></i></button>
+                        <button id="playPauseButton"><i class="fa-solid fa-play"></i></button>
+                        <button id="nextSongButton"><i class="fa-solid fa-forward-step"></i></button>
+                    </div>
+                    <!-- Progress bar -->
+                    <div class="bottom-controls">
+                        <input id="progressBar" type="range" value="0" min="0" max="1000">
+                    </div>
+                    <!-- Volume slider, loop, shuffle -->
+                    <div class="side-controls">
+                        <input id="loop" type="checkbox">
+                        <label for="loop"><i class="fa-solid fa-repeat"></i></label>
+                        <input id="volumeSlider" type="range" value="50" min="0" max="100">
+                    </div>
+                </section>
+            </section>
 
-    <!-- Music player controls -->
-    <section class="player-controls">
-        
-        <!-- Previous song, play/pause, an next song buttons -->
-        <div class="top-controls">            
-            <button id="previousSongButton"><i class="fa-solid fa-backward-step"></i></button>
-            <button id="playPauseButton"><i class="fa-solid fa-play"></i></button>
-            <button id="nextSongButton"><i class="fa-solid fa-forward-step"></i></button>
         </div>
 
-        <!-- Progress bar -->
-        <div class="bottom-controls">
-            <input id="progressBar" type="range" value="0" min="0" max="1000">
-        </div>
 
-        <!-- Volume slider, loop, shuffle -->
-        <div class="side-controls">
-            <input id="loop" type="checkbox">
-            <label for="loop"><i class="fa-solid fa-repeat"></i></label>
-
-            <input id="volumeSlider" type="range" value="50" min="0" max="100">
-        </div>
-
-    </section>
+    </main>
 
 </body>
 </html>
