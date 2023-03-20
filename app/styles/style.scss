@@ -8,17 +8,14 @@ $icon-disabled: #6c6b70;
     padding: 0;
     box-sizing: border-box;
 
-    color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-    // Make evyerthing feel like a propper app, not a website
     outline: none;
-    pointer-events: none;
-    &::selection { background-color: transparent; }
 }
 
 body {
     overflow: hidden;
+    color: white;
     background-color: #14171a;
 }
 
@@ -27,9 +24,11 @@ body {
 
     .song-list {
         flex: 50%;
+        width: 50vw;
     }
     .player {
         flex: 50%;
+        width: 50vw;
     }
 }
 
@@ -38,7 +37,7 @@ body {
 
 
 
-
+// Top section of the actual music player. Contians song information.
 .song-info {
     overflow: hidden;
     width: 50vw;
@@ -79,13 +78,37 @@ body {
     }
 }
 
-
+// Bottom section of the music player. Contains the controls.
 .player-controls {
     z-index: 999;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 50vw;
     height: 20%;
 
     background-color: #281f27;
+
+    // Main audio controls
+    .top-controls {
+        text-align: center;
+        
+        // Buttons
+        button {
+            width: 80px;
+            height: 80px;
+            font-size: 2.5rem;
+            color: white;
+            background-color: transparent;
+            border: none;
+            border-radius: 100%;
+            margin-top: 10px;
+
+            &#playPauseButton {
+                background-color: #ffffff;
+                color: #000000;
+            }
+        }
+
+        
+    }
 }
