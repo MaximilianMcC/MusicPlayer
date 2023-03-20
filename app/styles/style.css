@@ -2,8 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   outline: none;
+  pointer-events: none;
+}
+*::-moz-selection {
+  background-color: transparent;
+}
+*::selection {
+  background-color: transparent;
 }
 
 body {
@@ -26,10 +34,29 @@ body {
   width: 50vw;
 }
 .song-info .background img {
+  z-index: -999999999;
   align-self: center;
-  width: 110%;
+  width: 100%;
   height: auto;
   filter: blur(20px) brightness(50%);
+}
+.song-info .song-info {
+  position: absolute;
+  top: 10%;
+  text-align: center;
+}
+.song-info .song-info img {
+  border-radius: 25px;
+  width: 70%;
+}
+.song-info .song-info h1 {
+  font-size: 2rem;
+}
+.song-info .song-info h2 {
+  font-size: 1rem;
+  font-style: italic;
+  text-transform: uppercase;
+  color: gray;
 }
 
 .player-controls {

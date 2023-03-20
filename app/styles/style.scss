@@ -8,9 +8,13 @@ $icon-disabled: #6c6b70;
     padding: 0;
     box-sizing: border-box;
 
+    color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+    // Make evyerthing feel like a propper app, not a website
     outline: none;
+    pointer-events: none;
+    &::selection { background-color: transparent; }
 }
 
 body {
@@ -36,16 +40,42 @@ body {
 
 
 .song-info {
-
     overflow: hidden;
     width: 50vw;
 
     // Blurred background image
     .background img {
+        z-index: -999999999;
         align-self: center;
-        width: 110%;
+        width: 100%;
         height: auto;
         filter: blur(20px) brightness(50%);
+    }
+
+    // Song information
+    .song-info {
+        position: absolute;
+        top: 10%;
+        text-align: center;
+
+        // Main cover image
+        img {
+            border-radius: 25px;
+            width: 70%;
+        }
+
+        // Song title
+        h1 {
+            font-size: 2rem;
+        }
+
+        // Song artist
+        h2 {
+            font-size: 1rem;
+            font-style: italic;
+            text-transform: uppercase;
+            color: gray;
+        }
     }
 }
 
