@@ -22,9 +22,40 @@ body {
     display: flex;
 
     .song-list {
-        flex: 50px;
+        flex: 50%;
     }
     .player {
         flex: 50%;
     }
+}
+
+
+
+
+
+
+
+.song-info {
+
+    overflow: hidden;
+    width: 50vw;
+
+    // Blurred background image
+    .background img {
+        align-self: center;
+        width: 110%;
+        height: auto;
+        filter: blur(20px) brightness(50%);
+    }
+}
+
+
+.player-controls {
+    z-index: 999;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+
+    background-color: #281f27;
 }
