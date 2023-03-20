@@ -1,5 +1,3 @@
-//#cf4444
-
 $icon-enabled: #ffffff;
 $icon-disabled: #6c6b70;
 
@@ -35,8 +33,6 @@ body {
 
 
 
-
-
 // Top section of the actual music player. Contians song information.
 .song-info {
     overflow: hidden;
@@ -45,9 +41,9 @@ body {
     // Blurred background image
     .background img {
         z-index: -999999999;
-        // align-self: center;
+        object-fit: cover;
         width: 100%;
-        height: 100%;
+        height: 460px;
         filter: blur(20px) brightness(50%);
     }
 
@@ -77,8 +73,6 @@ body {
         }
     }
 }
-
-
 
 
 // Top audio controls
