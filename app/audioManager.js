@@ -1,7 +1,5 @@
 const musicPlayer = document.querySelector("audio");
 
-
-
 // Check for if the music needs to be played or paused
 const playPauseButton = document.querySelector("#playPauseButton");
 let playing = false;

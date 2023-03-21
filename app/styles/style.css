@@ -34,7 +34,7 @@ body {
      object-fit: cover;
   width: 100%;
   height: 460px;
-  filter: blur(20px) brightness(50%);
+  filter: blur(15px) brightness(50%);
 }
 .song-info .song-info {
   position: absolute;
