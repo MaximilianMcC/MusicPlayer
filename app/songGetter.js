@@ -27,6 +27,7 @@ fileSystem.readdir(musicPath, (error, files) => {
 
         // Add the song to the list of songs
         songs.push({
+            fileName: file.replace(".mp3", ""),
             filePath: filePath,
             title: id3Information.title,
             artist: id3Information.artist,
@@ -46,14 +47,22 @@ function loadSong(song) {
     // Set the music players source to the file location
     document.querySelector("audio").src = song.filePath;
 
-    // Change the title, and artist name in the DOM
-    document.querySelector("#title").innerHTML = song.title;
-    document.querySelector("#artist").innerHTML = song.artist;
+    // Change the title, and app title
+    let title = song.fileName;
+    if (song.title != undefined) title = song.title;
+    document.querySelector("#title").innerHTML = title;
+    document.querySelector("title").innerHTML = "Music Player - " + title;
+
+    // Change the artist
+    let artist = "No artist specified";
+    if (song.artist != undefined) artist = song.artist;
+    document.querySelector("#artist").innerHTML = artist;
 
     // Convert the cover image to base64 so it can be added to the DOM
-    console.log(song.coverImage);
-    const base64 = `data:image/jpeg;base64,` + Buffer.from(song.coverImage.imageBuffer).toString("base64");
-    document.querySelectorAll("#coverImage").forEach(image => {
-        image.src = base64;
-    })
+    //TODO: Could possibly get the first image result for the filename instead of showing the missing image
+    let image = "../assets/img/missing.png";
+    if (song.coverImage != undefined) image = `data:image/jpeg;base64,` + Buffer.from(song.coverImage.imageBuffer).toString("base64");
+    document.querySelectorAll("#coverImage").forEach(currentImage => {
+        currentImage.src = image;
+    });
 }
