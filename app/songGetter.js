@@ -37,3 +37,23 @@ fileSystem.readdir(musicPath, (error, files) => {
 });
 
 console.log(songs);
+
+
+
+
+function loadSong(song) {
+    
+    // Set the music players source to the file location
+    document.querySelector("audio").src = song.filePath;
+
+    // Change the title, and artist name in the DOM
+    document.querySelector("#title").innerHTML = song.title;
+    document.querySelector("#artist").innerHTML = song.artist;
+
+    // Convert the cover image to base64 so it can be added to the DOM
+    console.log(song.coverImage);
+    const base64 = `data:image/jpeg;base64,` + Buffer.from(song.coverImage.imageBuffer).toString("base64");
+    document.querySelectorAll("#coverImage").forEach(image => {
+        image.src = base64;
+    })
+}
