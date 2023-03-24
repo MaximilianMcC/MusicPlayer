@@ -13,7 +13,6 @@ fileSystem.readdir(musicPath, (error, files) => {
     // Check for errors
     if (error) {
         throw error;
-        return;
     }
 
     files.forEach(file => {
@@ -44,8 +43,11 @@ console.log(songs);
 
 function loadSong(song) {
     
-    // Set the music players source to the file location
-    document.querySelector("audio").src = song.filePath;
+    // Load, then play the song
+    const musicPlayer = document.querySelector("audio");
+    musicPlayer.src = song.filePath;
+    musicPlayer.play();
+
 
     // Change the title, and app title
     let title = song.fileName;
