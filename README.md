@@ -2,11 +2,11 @@
 A music player thats made in Electron. Designed to play both online music from the internet, and offline files on your local pc.
 
 ## Planned Features
-- [x] Play/pause
-- [x] Progress bar thing
-- [x] Volume slider
+- [ ] Play/pause
+- [ ] Progress bar thing
+- [ ] Volume slider
 - [ ] Way to add and remove songs
-- [x] Looping songs
+- [ ] Looping songs
 - [ ] Way to get all songs on pc from specified directory
 - [ ] Ability to listen to songs online from places like YouTube Music
 - [ ] Twemoji
@@ -15,7 +15,7 @@ A music player thats made in Electron. Designed to play both online music from t
 - [ ] Playlists
 - [ ] Shuffle songs
 - [ ] Discord Rich presence with settings to show the song name or not
-- [x] ID3 integration
+- [ ] ID3 integration
 - [ ] Ambient sounds mode. Stuff like rain, ocean, etc
 - [ ] Way to add YouTube live-steams
 - [ ] Video player (Depends on how much this program is used)
