@@ -170,3 +170,8 @@ dist
 
 test.*
 .vscode
+
+
+
+# git stuff
+.gitattributes
