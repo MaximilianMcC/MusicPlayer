@@ -1,147 +1,75 @@
-$icon-enabled: #ffffff;
-$icon-disabled: #6c6b70;
+// Color codes and stuff
+$background-main: #172629;
+$background-secondary: #1B2F33;
+$accent: #a119e5;
+$test1: green;
+$test1: red;
+$test1: blue;
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    outline: none;
+html, body {
+    height: 100%;
 }
 
 body {
-    overflow: hidden;
     color: white;
-    background-color: #14171a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.app-wrapper {
-    display: flex;
-
-    .song-list {
-        flex: 50%;
-        width: 50vw;
-    }
-    .player {
-        flex: 50%;
-        width: 50vw;
-    }
+// Main app layout
+main {
+    display: grid;
+    grid-template-columns: 1.8fr 5fr 2.5fr;
+    height: 100%;
 }
 
 
+.sidebar {
+    height: 100%;
+    background-color: $background-secondary;
 
+    ul li {
+        transition: ease-in-out 0.2s;
+        background-color: $background-main;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 3px;
 
-// Top section of the actual music player. Contians song information.
-.song-info {
-    overflow: hidden;
-    width: 50vw;
-
-    // Blurred background image
-    .background img {
-        z-index: -999999999;
-        object-fit: cover;
-        width: 100%;
-        height: 460px;
-        filter: blur(15px) brightness(50%);
-    }
-
-    // Song information
-    .song-info {
-        position: absolute;
-        top: 10%;
-        text-align: center;
-
-        // Main cover image
-        img {
-            border-radius: 25px;
-            width: 70%;
+        // Add a background bubble thing to the icons
+        i {
+            margin-right: 10px;
+            background-color: $accent;
+            padding: 5px;
+            border-radius: 50%;
         }
 
-        // Song title
-        h1 {
-            font-size: 2rem;
-        }
-
-        // Song artist
-        h2 {
-            font-size: 1rem;
-            font-style: italic;
-            text-transform: uppercase;
-            color: gray;
-        }
-    }
-}
-
-
-// Top audio controls
-.top-controls {
-    position: absolute;
-    top: 0;
-    z-index: 9999;
-    width: 50vw;
-    padding: 10px;
-    text-align: center;
-    background-color: #281f27;
-
-    // Loop and shuffle buttons
-    #loop, #shuffle {
-
-        &[type='checkbox'] {
-            display: none;
-        }
-
-        &[type='checkbox'] + label {
-            color: $icon-disabled;
-        }
-
-        &[type='checkbox']:checked + label {
-            color: $icon-enabled;
-        }
-    }
-
-    // Volume slider
-    #volumeSlider {
-        width: 50%;
-    }
-}
-
-
-// Bottom audio controls
-.bottom-controls {
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    z-index: 999;
-    height: 20%;
-    width: 50vw;
-    background-color: #281f27;
-    padding: 10px;
-
-    // Main audio controls
-    .media-buttons {
-        
-        // Buttons
+        // Remove all button styling
         button {
-            width:70px;
-            height: 70px;
-            font-size: 2.5rem;
             color: white;
-            background-color: transparent;
             border: none;
-            border-radius: 100%;
+            background-color: transparent;
+        }
 
-            &#playPauseButton {
-                background-color: #ffffff;
-                color: #000000;
-            }
+        &:hover {
+            background-color: darken($background-main, 3);
         }
     }
 
-    // Progress bar
-    //TODO: Add some sort of styling to this
-    #progressBar {
-        width: 75%;
-    }
+}
+
+// A list of song names
+.songs-list {
+    height: 100%;
+    background-color: $background-main;
+}
+
+.player {
+    height: 100%;
+    background-color: $background-secondary;
 }
