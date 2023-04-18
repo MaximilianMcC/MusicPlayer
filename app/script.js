@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	console.log("Hello, World!");
 
 	// Add all of the content tabs
+	//TODO: Make a way to do this in settings
 	contentTabs.push({
 		type: contentTabType.MP3,
 		name: "Local MP3 files"
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	contentTabs.push({
 		type: contentTabType.VIDEO,
 		name: "Lofi Hip-Hop Radio",
-		url: "https://www.youtube.com/watch?v=I-SW8x-54Ro"
+		url: "https://www.youtube.com/watch?v=jfKfPfyJRdk"
 	});
 	contentTabs.push({
 		type: contentTabType.VIDEO,
@@ -45,7 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		// Add an event listener to change the tab
 		button.addEventListener("click", () => {
-			console.log(i);
+
+			// Switch the content tab
+			setContentTab(contentTabs[i]);
 		});
 
 		// Append the button to the DOM
@@ -56,3 +59,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+
+function setContentTab(contentTab) {
+	console.log("\nChanged the content tab to " + contentTab.name);
+
+	// Check for if the content type is a youtube video or local MP3 files
+	if (contentTab.type === contentTabType.VIDEO) {
+
+		// Generate the YouTube video URL
+		const videoUrl = contentTab.url;
+		const videoId = (/[^v=]*$/).exec(videoUrl)[0];
+		const url = `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&loop=1`;
+
+		// Generate the video embed
+		const embed = `<iframe src="${url}" frameborder="0" allowfullscreen></iframe>`;
+
+		// Add the video to the DOM
+		document.querySelector(".content-tab").innerHTML = embed;
+
+	} else if (contentTab.type === contentTabType.MP3) {
+
+		//TODO: Get a list of all songs
+
+
+
+		document.querySelector(".content-tab").innerHTML = "";
+	}
+
+	
+}
