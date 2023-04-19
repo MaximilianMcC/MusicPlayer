@@ -8,7 +8,7 @@ A music player thats made in Electron. Designed to play both online music from t
 - [ ] Way to add and remove songs
 - [ ] Looping songs
 - [ ] Way to get all songs on pc from specified directory
-- [ ] Ability to listen to songs online from places like YouTube Music
+- [x] Ability to listen to songs online from places like YouTube Music
 - [ ] Twemoji
 - [ ] Ability to download the song from online to MP3
 - [ ] Different color themes
