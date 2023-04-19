@@ -1,6 +1,7 @@
 // Imports
-const path = require("path");
 const fileSystem = require("fs");
+const path = require("path");
+const id3 = require("node-id3");
 
 // All of the apps content tabs
 let contentTabs = [];
@@ -80,11 +81,30 @@ function setContentTab(contentTab) {
 
 	} else if (contentTab.type === contentTabType.MP3) {
 
-		//TODO: Get a list of all songs
+		//TODO: Make the music directory editable in settings
+		const musicDirectory = "C:/Users/Max/Music";
+
+		// Get a list of all songs in the music directory
+		fileSystem.readdir(musicDirectory, (error, files) => {
+
+			// Check for if there is an error
+			if (error) throw error;
+
+			// Loop through all files
+			files.forEach(file => {
+
+				// Check for if the file is an MP3
+				if (!file.endsWith(".mp3")) return;
+
+				// Get all of the ID3 info
+				const filePath = path.join(musicDirectory, file);
+				const id3Information = id3.read(filePath);
+				console.log(id3Information.title);
+			});
+		});
 
 
-
-		document.querySelector(".content-tab").innerHTML = "";
+		document.querySelector(".content-tab").innerHTML += "";
 	}
 
 	
