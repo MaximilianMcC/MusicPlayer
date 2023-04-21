@@ -105,10 +105,14 @@ main {
     ::-webkit-scrollbar {
         width: 10px;
 
-        &-track { background-color: transparent; }
+        &-track {
+            background-color: transparent;
+            padding: 10px;
+        }
         &-thumb {
             background-color:  $background-main-dark;
             border-radius: 5px;
+            height: 100px;
 
             &:hover {
                 background-color: lighten($background-main-dark, 1);

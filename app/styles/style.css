@@ -78,10 +78,12 @@ main {
 }
 .songs-list ::-webkit-scrollbar-track {
   background-color: transparent;
+  padding: 10px;
 }
 .songs-list ::-webkit-scrollbar-thumb {
   background-color: #121d1f;
   border-radius: 5px;
+  height: 100px;
 }
 .songs-list ::-webkit-scrollbar-thumb:hover {
   background-color: #132022;

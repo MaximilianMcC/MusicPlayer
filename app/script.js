@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 	contentTabs.push({
 		type: contentTabType.VIDEO,
+		name: "Synthwave Radio",
+		url: "https://www.youtube.com/watch?v=MVPTGNGiI-4"
+	});
+	contentTabs.push({
+		type: contentTabType.VIDEO,
 		name: "Star Wars Lofi",
 		url: "https://www.youtube.com/watch?v=I-SW8x-54Ro"
 	});
@@ -58,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		document.querySelector(".sidebar ul").appendChild(listItem);
 	}
 
+	//TODO: Open the first content tab
 
 });
 
@@ -81,6 +87,12 @@ function setContentTab(contentTab) {
 
 	} else if (contentTab.type === contentTabType.MP3) {
 
+		console.log(contentTab.name);
+
+		// Add the song list sections to the DOM
+		document.querySelector(".content-tab").innerHTML = `<div class="songs-list"><ul></ul></div>`;
+		const songsList = document.querySelector(".songs-list ul");
+
 		//TODO: Make the music directory editable in settings
 		const musicDirectory = "C:/Users/Max/Music";
 
@@ -99,12 +111,23 @@ function setContentTab(contentTab) {
 				// Get all of the ID3 info
 				const filePath = path.join(musicDirectory, file);
 				const id3Information = id3.read(filePath);
-				console.log(id3Information.title);
+
+				// Add the song to the DOM
+				const songCard = `
+					<div class="song-container">
+                        <div class="song-picture">
+                            <img src="../assets/img/icon.png" alt="Image">
+                        </div>
+                        <div class="song-info">
+                            <h2>${id3Information.title}</h2>
+                            <h3>${id3Information.artist}</h3>
+                        </div>
+                    </div>`;
+				songsList.innerHTML += songCard;
 			});
 		});
 
 
-		document.querySelector(".content-tab").innerHTML += "";
 	}
 
 	
