@@ -19,6 +19,7 @@ const createWindow = () => {
 			contextIsolation: false,
 			enableRemoteModule: true
 		},
+		alwaysOnTop: true,
 		icon: "./assets/img/icon.png"
 	});
 
