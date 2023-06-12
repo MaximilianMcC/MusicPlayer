@@ -10,7 +10,7 @@ require("electron-reload")(__dirname);
 const createWindow = () => {
 
 	const mainWindow = new BrowserWindow({
-		width: 600,
+		width: 500,
 		height: 800,
 		autoHideMenuBar: true,
 		resizable: false,
