@@ -1,5 +1,6 @@
 const audioPlayer = document.getElementById("musicPlayer");
 audioPlayer.src = "../assets/test.mp3";
+audioPlayer.volume = 0.5
 
 
 
@@ -20,6 +21,7 @@ playPauseButton.addEventListener("click", (event) => {
 	}
 
 });
+
 
 
 // Update the progress bar as the song plays
@@ -47,4 +49,23 @@ progressBar.addEventListener("input", () => {
 
     // Update the audio time
     musicPlayer.currentTime = newTime;
+});
+
+
+
+// Check for if the user scrolls, then increase/decrease the volume
+const volumeIncrease = 0.05;
+window.addEventListener("wheel", (event) => {
+	
+	// Check for if the user is scrolling upwards or downwards
+	if (event.deltaY > 0)
+	{
+		// Decrease volume (scrolling down)
+		audioPlayer.volume = clamp((audioPlayer.volume - volumeIncrease), 0, 1);
+
+	} else if (event.deltaY < 0) {
+
+		// Increase volume (scrolling up)
+		audioPlayer.volume = clamp((audioPlayer.volume + volumeIncrease), 0, 1);
+	}
 });
