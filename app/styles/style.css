@@ -31,6 +31,7 @@ body, html {
 .music-info .content {
   padding-top: 35px;
   text-align: center;
+  color: #ffffff;
 }
 .music-info .content img {
   height: 75%;
@@ -58,6 +59,7 @@ body, html {
   background-color: transparent;
   border: none;
   font-size: 50px;
+  fill: #ffffff;
   cursor: pointer;
 }
 
