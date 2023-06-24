@@ -63,19 +63,30 @@ body, html {
 		padding: 10px;
 		
 		.player-controls {
-			width: 50%;
+			width: 80%;
 			display: flex;
-			justify-content: space-around;
-			align-items: center;
-	
-			button {
-				background-color: transparent;
-				border: none;
-				font-size: 50px;
-				fill: $text;
-				
-				cursor: pointer;
+			flex-direction: column;
+
+			.row {
+				width: 100%;
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+
+				button {
+					background-color: transparent;
+					border: none;
+					font-size: 50px;
+					fill: $text;
+					
+					cursor: pointer;
+				}
+
+				input[type="range"] {
+					width: 100%;
+				}
 			}
+	
 	
 		}
 	}

@@ -50,17 +50,25 @@ body, html {
   padding: 10px;
 }
 .music-info .player-controls-wrapper .player-controls {
-  width: 50%;
+  width: 80%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+}
+.music-info .player-controls-wrapper .player-controls .row {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
 }
-.music-info .player-controls-wrapper .player-controls button {
+.music-info .player-controls-wrapper .player-controls .row button {
   background-color: transparent;
   border: none;
   font-size: 50px;
   fill: #ffffff;
   cursor: pointer;
+}
+.music-info .player-controls-wrapper .player-controls .row input[type=range] {
+  width: 100%;
 }
 
 .next-songs {
