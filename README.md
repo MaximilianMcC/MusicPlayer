@@ -4,3 +4,6 @@ A Simple music player app thats made using Electron. The main focus of this is t
 # ux😍😍
 wire frame
 ![wireframe of design](https://i.imgur.com/yGd3MGu.png)
+
+wire frame version iteration 2 (last one was bad)
+![Second wireframe of design](https://i.imgur.com/cnzNRuY.png)
