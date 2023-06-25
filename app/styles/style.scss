@@ -16,104 +16,78 @@ body, html {
 }
 
 
-.music-info {
-	position: relative;
-	overflow: hidden;
-	height: 600px;
-	
-	.background {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		z-index: -1;
-		
-		background-image: url('../../assets/img/test.png');
-		background-position: center;
-		background-size: cover;
-
-		filter: blur(15px);
-		scale: 1.1;
-	}
-
-	.content {
-		padding-top: 35px;
-		text-align: center;
-		color: $text;
-
-		img {
-			height: 75%;
-			width: 75%;
-			border-radius: 10px;
-		}
-	}
 
 
-	.player-controls-wrapper {
-		position: absolute;
-		display: flex;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		justify-content: center;
 
-		//? Can also add a background-color that has alpha and a color to change this
-		backdrop-filter: blur(25px);
+.music-player {
+	display: grid;
+	grid-template-columns: 1fr 1.3fr;
+	height: 100vh;
+
+	// Left section
+	.left {
+		background-color: greenyellow;
 		padding: 10px;
+
+		// Cover image
+		.cover-image img {
+			aspect-ratio: 1/1;
+			max-width: 100%;
+			height: auto;
 		
+			border-radius: 6px;
+		}
+		
+		// forwards, backwards, play, and pause controls
 		.player-controls {
-			width: 80%;
 			display: flex;
-			flex-direction: column;
+			height: 70px; //TODO: Do this another way.
+			justify-content: space-evenly;
 
-			.row {
-				width: 100%;
-				display: flex;
-				justify-content: space-evenly;
-				align-items: center;
-
-				button {
-					background-color: transparent;
-					border: none;
-					font-size: 50px;
-					fill: $text;
-					
-					cursor: pointer;
-				}
-
-				input[type="range"] {
-					width: 100%;
-				}
+			button {
+				background-color: transparent;
+				border: none;
+				font-size: 35px;
 			}
-	
-	
 		}
 	}
 
+	// Right section
+	.right {
+		background-color: blueviolet;
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 
-}
+		// Title and artist
+		.song-info {
+			margin-bottom: 10px;
+			background-color: greenyellow;
 
+			h1 { font-size: 25px; }
+			h2 { font-size: 15px; }
+		}
 
+		// Equalizer
+		.equalizer-wrapper {
+			margin-bottom: 10px;
+			background-color: greenyellow;
 
+			canvas {
+				background-color: red;
+				width: 100%;
+				height: 100%;
+			}
+		}
 
+		// Progress bar
+		.progress-bar-wrapper {
+			background-color: greenyellow;
 
-
-.next-songs {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	flex-wrap: wrap;
-
-	.song-card {
-		background-image: url('../../assets/img/test.png');
-		background-position: center;
-		background-size: cover;
-		width: 150px;
-		height: 150px;
-
-		h1 {
-			font-size: 10px;
+			input {
+				width: 100%;
+			}
 		}
 	}
 }

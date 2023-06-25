@@ -10,80 +10,60 @@ body, html {
   height: 100%;
 }
 
-.music-info {
-  position: relative;
-  overflow: hidden;
-  height: 600px;
+.music-player {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  height: 100vh;
 }
-.music-info .background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  background-image: url("../../assets/img/test.png");
-  background-position: center;
-  background-size: cover;
-  filter: blur(15px);
-  scale: 1.1;
-}
-.music-info .content {
-  padding-top: 35px;
-  text-align: center;
-  color: #ffffff;
-}
-.music-info .content img {
-  height: 75%;
-  width: 75%;
-  border-radius: 10px;
-}
-.music-info .player-controls-wrapper {
-  position: absolute;
-  display: flex;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  justify-content: center;
-  -webkit-backdrop-filter: blur(25px);
-          backdrop-filter: blur(25px);
+.music-player .left {
+  background-color: greenyellow;
   padding: 10px;
 }
-.music-info .player-controls-wrapper .player-controls {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
+.music-player .left .cover-image img {
+  aspect-ratio: 1/1;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
 }
-.music-info .player-controls-wrapper .player-controls .row {
-  width: 100%;
+.music-player .left .player-controls {
   display: flex;
+  height: 70px;
   justify-content: space-evenly;
-  align-items: center;
 }
-.music-info .player-controls-wrapper .player-controls .row button {
+.music-player .left .player-controls button {
   background-color: transparent;
   border: none;
-  font-size: 50px;
-  fill: #ffffff;
-  cursor: pointer;
+  font-size: 35px;
 }
-.music-info .player-controls-wrapper .player-controls .row input[type=range] {
-  width: 100%;
-}
-
-.next-songs {
+.music-player .right {
+  background-color: blueviolet;
+  padding: 10px;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.next-songs .song-card {
-  background-image: url("../../assets/img/test.png");
-  background-position: center;
-  background-size: cover;
-  width: 150px;
-  height: 150px;
+.music-player .right .song-info {
+  margin-bottom: 10px;
+  background-color: greenyellow;
 }
-.next-songs .song-card h1 {
-  font-size: 10px;
+.music-player .right .song-info h1 {
+  font-size: 25px;
+}
+.music-player .right .song-info h2 {
+  font-size: 15px;
+}
+.music-player .right .equalizer-wrapper {
+  margin-bottom: 10px;
+  background-color: greenyellow;
+}
+.music-player .right .equalizer-wrapper canvas {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+}
+.music-player .right .progress-bar-wrapper {
+  background-color: greenyellow;
+}
+.music-player .right .progress-bar-wrapper input {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
