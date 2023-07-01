@@ -14,17 +14,17 @@ audioSource.connect(analyser);
 analyser.connect(audioContext.destination);
 analyser.fftSize = 256;
 
-// Get the frequency stuff
-const bufferLength = analyser.frequencyBinCount;
-const audioData = new Uint8Array(bufferLength);
+// Store all of the frequency things in the song
+// let barCount = Math.floor(analyser.frequencyBinCount / 5);
+const barCount = 30;
+const audioData = new Uint8Array(barCount);
 
 // Bar settings
-const padding = 1;
-const barColor = "#ffffff";
-const barWidth = (width / bufferLength) * 2.5;
+const barColorEnd = "105, 184, 240";
+const barColorMiddle = "8, 25, 38";
+const barWidth = width / barCount;
 let barHeight;
 let x;
-
 
 function renderFrame() {
 	requestAnimationFrame(renderFrame);
@@ -33,22 +33,29 @@ function renderFrame() {
 	analyser.getByteFrequencyData(audioData);
 	
 	// Clear and reset the canvas
-	canvasContext.fillStyle = "#000000";
-	canvasContext.fillRect(0, 0, width, height);
+	canvasContext.clearRect(0, 0, width, height);
 	x = 0;
 
 	// Loop over every bar and draw it
-	for (let i = 0; i < bufferLength; i++) {
+	for (let i = 0; i < barCount; i++) {
 		
-		// Get the height of the bar
+		// Get the height of the bar and calculate its Y position
 		barHeight = audioData[i];
-		
+		let y = (height - barHeight) / 2;
+
+		// Create a gradient at the ends of the bars
+        const gradient = canvasContext.createLinearGradient(0, 0, 0, canvas.height);
+        gradient.addColorStop(0, `rgba(${barColorEnd}, 0)`);
+		gradient.addColorStop(0.5, `rgba(${barColorMiddle}, 1)`);
+		gradient.addColorStop(1, `rgba(${barColorEnd}, 0)`);
+
+
 		// Draw the bar
-		canvasContext.fillStyle = barColor;
-		canvasContext.fillRect(x, (height - barHeight), barWidth, barHeight);
+		canvasContext.fillStyle = gradient;
+		canvasContext.fillRect(x, y, barWidth, barHeight);
 
 		// Update the x for the next bar
-		x += barWidth + padding;
+		x += barWidth;
 	}
 }
 
