@@ -1,6 +1,6 @@
-$background: #52de3c;
-$text: #ffffff;
-// $text: #000000;
+$background-primary: #132430;
+$background-secondary: #081926;
+$text: #fde6e6;
 
 
 *, *::before, *::after {
@@ -23,10 +23,11 @@ body, html {
 	display: grid;
 	grid-template-columns: 1fr 1.3fr;
 	height: 100vh;
+	color: $text;
 
 	// Left section
 	.left {
-		background-color: greenyellow;
+		background-color: $background-secondary;
 		padding: 10px;
 
 		// Cover image
@@ -48,13 +49,17 @@ body, html {
 				background-color: transparent;
 				border: none;
 				font-size: 35px;
+
+				svg path {
+					fill: $text;
+				}
 			}
 		}
 	}
 
 	// Right section
 	.right {
-		background-color: blueviolet;
+		background-color: $background-primary;
 		padding: 10px;
 		display: flex;
 		flex-direction: column;
@@ -63,7 +68,6 @@ body, html {
 		// Title and artist
 		.song-info {
 			margin-bottom: 10px;
-			background-color: greenyellow;
 
 			h1 { font-size: 25px; }
 			h2 { font-size: 15px; }
@@ -72,10 +76,8 @@ body, html {
 		// Equalizer
 		.equalizer-wrapper {
 			margin-bottom: 10px;
-			background-color: greenyellow;
 
 			canvas {
-				background-color: red;
 				width: 100%;
 				height: 100%;
 			}
@@ -83,10 +85,29 @@ body, html {
 
 		// Progress bar
 		.progress-bar-wrapper {
-			background-color: greenyellow;
 
-			input {
+			input[type="range"] {
 				width: 100%;
+				-webkit-appearance: none;
+				appearance: none;
+				background-color: transparent;
+			
+				&::-webkit-slider-runnable-track {
+					background-color: $background-secondary;
+					border-radius: 10px;
+					height: 10px;
+				}
+
+				&::-webkit-slider-thumb {
+					-webkit-appearance: none;
+					appearance: none;
+					position: relative;
+					top: -2.5px; // TODO: Don't do this. Hack
+					background-color: $text;
+					width: 15px;
+					height: 15px;
+					border-radius: 100%;
+				}
 			}
 		}
 	}
