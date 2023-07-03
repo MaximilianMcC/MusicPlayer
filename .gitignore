@@ -169,6 +169,9 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,node,sass
 
 test.*
+test1.*
+test2.*
+test3.*
 .vscode
 
 
