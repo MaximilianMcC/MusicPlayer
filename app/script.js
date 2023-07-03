@@ -54,7 +54,7 @@ progressBar.addEventListener("input", () => {
 
 
 // Check for if the user scrolls, then increase/decrease the volume
-const volumeIncrease = 0.05;
+const volumeIncrease = 0.02;
 window.addEventListener("wheel", (event) => {
 	
 	// Check for if the user is scrolling upwards or downwards

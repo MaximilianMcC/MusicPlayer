@@ -19,7 +19,8 @@ const barCount = 18;
 const audioData = new Uint8Array(barCount);
 
 // Bar settings
-const barColor = "#081926";
+const barColor = "transparent";
+const backgroundColor = "#081926";
 const barWidth = (width / barCount) + 1;
 let barHeight;
 let x;
@@ -31,7 +32,9 @@ function renderFrame() {
 	analyser.getByteFrequencyData(audioData);
 	
 	// Clear and reset the canvas
-	canvasContext.clearRect(0, 0, width, height);
+	// canvasContext.clearRect(0, 0, width, height);
+	canvasContext.fillStyle = backgroundColor;
+	canvasContext.fillRect(0, 0, width, height);
 	x = 0;
 
 	// Loop over every bar and draw it
@@ -42,8 +45,10 @@ function renderFrame() {
 		let y = height - barHeight;
 
 		// Draw the bar
-		canvasContext.fillStyle = barColor;
+		canvasContext.globalCompositeOperation = "destination-out";
+		canvasContext.fillStyle = "rgba(0, 0, 0, 1)";
 		canvasContext.fillRect(x, y, barWidth, barHeight);
+		canvasContext.globalCompositeOperation = "source-over";
 
 		// Update the x for the next bar
 		x += barWidth - 1;
