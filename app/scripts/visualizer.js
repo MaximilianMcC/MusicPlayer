@@ -22,7 +22,7 @@ const audioData = new Uint8Array(barCount);
 const previousAudioData = audioData;
 
 // Bar settings
-const barColor = "transparent";
+const barColor = "green";
 const backgroundColor = "#081926";
 const barWidth = (width / barCount) + 1;
 let barHeight;
@@ -50,10 +50,8 @@ function renderFrame() {
 		let y = height - barHeight;
 
 		// Draw the bar
-		canvasContext.globalCompositeOperation = "destination-out";
-		canvasContext.fillStyle = "rgba(0, 0, 0, 1)";
+		canvasContext.fillStyle = barColor;
 		canvasContext.fillRect(x, y, barWidth, barHeight);
-		canvasContext.globalCompositeOperation = "source-over";
 
 		// Update the x for the next bar
 		x += barWidth - 1;
