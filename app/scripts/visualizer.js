@@ -22,8 +22,7 @@ let audioData = new Uint8Array(barCount);
 let previousAudioData = audioData;
 
 // Bar settings
-const barColor = "green";
-const backgroundColor = "#081926";
+const barColor = "#224056";
 const barWidth = (width / barCount) + 1;
 let barHeight;
 let x;
@@ -38,8 +37,7 @@ function renderFrame() {
 	if (audioPlayer.paused) audioData = previousAudioData;
 
 	// Clear and reset the canvas
-	canvasContext.fillStyle = backgroundColor;
-	canvasContext.fillRect(0, 0, width, height);
+	canvasContext.clearRect(0, 0, width, height);
 	x = 0;
 
 	// Loop over every bar and draw it

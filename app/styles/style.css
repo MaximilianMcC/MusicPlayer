@@ -44,7 +44,6 @@ html {
 }
 .music-player .right {
   background-color: #132430;
-  background-color: green;
   position: relative;
 }
 .music-player .right .song-info-wrapper {
