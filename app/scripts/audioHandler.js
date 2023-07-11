@@ -12,6 +12,7 @@ function loadSong() {
 
 		// Load the song
 		audioPlayer.src = songPath;
+		play();
 	});
 
 }
