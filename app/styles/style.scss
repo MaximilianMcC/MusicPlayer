@@ -3,14 +3,17 @@ $background-secondary: #081926;
 $text: #fde6e6;
 
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-body, html {
+body,
+html {
 	width: 100%;
 	height: 100%;
 }
@@ -36,10 +39,10 @@ body, html {
 			aspect-ratio: 1/1;
 			max-width: 100%;
 			height: auto;
-		
+
 			border-radius: 6px;
 		}
-		
+
 		// forwards, backwards, play, and pause controls
 		.player-controls {
 			display: flex;
@@ -61,25 +64,45 @@ body, html {
 	// Right section
 	.right {
 		background-color: $background-primary;
-		overflow-y: hidden;
-		display: flex;
-		justify-content: space-between;
-		flex-direction: column;
+		background-color: green;
+		position: relative;
 
-		// Title and artist
-		.song-info {
-			padding: 10px;
-			margin-bottom: 10px;
+		// Title and artist information
+		.song-info-wrapper {
+			position: absolute;
+			z-index: 99999;
+			top: 0;
+			left: 0;
 
-			h1 { font-size: 25px; }
-			h2 { font-size: 15px; }
+			.song-info {
+				padding: 25px;
+				padding-top: 95px;
+				text-align: center;
+
+				h1 {
+					font-size: 30px;
+				}
+				// Divider thing
+				hr {
+					height: 2px;
+					background-color: $text;
+					border: none;
+					margin: 20px 0 20px 0;
+				}
+	
+				h2 {
+					font-size: 15px;
+					color: darken($text, 5%);
+				}
+			}
+
 		}
 
 		// Equalizer
 		canvas {
 			width: 100%;
 			height: 100%;
-			background: linear-gradient(0deg, #1395f5, #0082d4, #006fb4, #005d95, #004b77, #053a5a, #08293f, #081926);		}
+		}
 
 		// Progress bar
 		.progress-bar-wrapper {
@@ -88,19 +111,19 @@ body, html {
 			justify-content: center;
 			align-items: center;
 			padding: 10px;
-
+	
 			input[type="range"] {
 				width: 100%;
 				-webkit-appearance: none;
 				appearance: none;
 				background-color: transparent;
-			
+	
 				&::-webkit-slider-runnable-track {
 					background-color: $background-primary;
 					border-radius: 10px;
 					height: 10px;
 				}
-
+	
 				&::-webkit-slider-thumb {
 					-webkit-appearance: none;
 					appearance: none;
@@ -114,4 +137,5 @@ body, html {
 			}
 		}
 	}
+
 }
