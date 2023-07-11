@@ -16,10 +16,10 @@ analyser.fftSize = 256;
 
 // Store all of the frequency things in the song
 const barCount = 18;
-const audioData = new Uint8Array(barCount);
+let audioData = new Uint8Array(barCount);
 
 // Store the previous data so that it can be displayed when the music is paused
-const previousAudioData = audioData;
+let previousAudioData = audioData;
 
 // Bar settings
 const barColor = "green";
