@@ -10,8 +10,8 @@
 	<meta name="referrer" content="strict-origin" />
 	<link rel="stylesheet" href="./styles/style.css">
 	
-	<script src="./scripts/utils.js" defer></script>
 	<script src="./scripts/audioHandler.js" defer></script>
+	<script src="./scripts/utils.js" defer></script>
 	<script src="./scripts/mediaControls.js" defer></script>
 	<script src="./scripts/visualizer.js" defer></script>
 
@@ -19,8 +19,15 @@
 
 <body>
 
-	<!-- The HTML audio element that plays the song -->
-	<audio style="display: none;" id="musicPlayer" loop></audio>
+	<!-- controls and whatnot -->
+	<div style="display: none;">
+
+		<!-- The HTML audio element that plays the song -->
+		<audio id="musicPlayer" loop></audio>
+
+		<!-- The form to open the mp4 files -->
+		<input id="fileInput" type="file" accept=".mp3, .wav, .ogg, .aac, .flac, .m4a, .webm, .mid, .midi">
+	</div>
 
 	<main>
 		
