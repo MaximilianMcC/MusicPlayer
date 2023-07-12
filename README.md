@@ -7,3 +7,6 @@ wire frame
 
 wire frame version iteration 2 (last one was bad)
 ![Second wireframe of design](https://i.imgur.com/cnzNRuY.png)
+
+wireframe number iteraton 3 (this the final one fr)
+![Third wireframe of the design](https://i.imgur.com/6Z5VqMM.png)
