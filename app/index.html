@@ -14,6 +14,7 @@
 	<script src="./scripts/utils.js" defer></script>
 	<script src="./scripts/mediaControls.js" defer></script>
 	<script src="./scripts/visualizer.js" defer></script>
+	<script src="./scripts/ID3editor.js" defer></script>
 
 </head>
 
@@ -26,7 +27,12 @@
 		<audio id="musicPlayer" loop></audio>
 
 		<!-- The form to open the mp4 files -->
+		<!-- TODO: Add videos, and change the image to a video if it is -->
 		<input id="fileInput" type="file" accept=".mp3, .wav, .ogg, .aac, .flac, .m4a, .webm, .mid, .midi">
+
+		<!-- The form to open the image -->
+		<input id="imageInput" type="file" accept="image/*">
+
 	</div>
 
 	<main>
