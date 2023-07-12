@@ -60,26 +60,28 @@ html {
   text-align: center;
 }
 .music-player .right .song-info-wrapper .song-info textarea {
-  font-size: 30px;
   background-color: transparent;
   width: 100%;
   height: auto;
   border: none;
-  color: #fde6e6;
   font-weight: bold;
   outline: none;
   text-align: center;
   resize: none;
+}
+.music-player .right .song-info-wrapper .song-info textarea.title {
+  font-size: 30px;
+  color: #fde6e6;
+}
+.music-player .right .song-info-wrapper .song-info textarea.artist {
+  font-size: 15px;
+  color: #fbcece;
 }
 .music-player .right .song-info-wrapper .song-info hr {
   height: 2px;
   background-color: #fde6e6;
   border: none;
   margin: 20px 0 20px 0;
-}
-.music-player .right .song-info-wrapper .song-info h2 {
-  font-size: 15px;
-  color: #fbcece;
 }
 .music-player .right canvas {
   width: 100%;

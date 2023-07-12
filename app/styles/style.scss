@@ -81,30 +81,35 @@ html {
 				padding: 25px;
 				padding-top: 95px;
 				text-align: center;
-
+				
+				// Title and subtitle
 				textarea {
-					font-size: 30px;
 					background-color: transparent;
 					width: 100%;
 					height: auto;
 					border: none;
-					color: $text;
 					font-weight: bold;
 					outline: none;
 					text-align: center;
 					resize: none;
+					
+					&.title {
+						font-size: 30px;
+						color: $text;
+					}
+
+					&.artist {
+						font-size: 15px;
+						color: darken($text, 5%);
+					}
 				}
+
 				// Divider thing
 				hr {
 					height: 2px;
 					background-color: $text;
 					border: none;
 					margin: 20px 0 20px 0;
-				}
-	
-				h2 {
-					font-size: 15px;
-					color: darken($text, 5%);
 				}
 			}
 

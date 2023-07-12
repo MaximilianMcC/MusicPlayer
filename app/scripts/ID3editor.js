@@ -9,17 +9,9 @@ document.querySelector("img").addEventListener("click", () => {
 
 	// Get the image
 	imagePicker.addEventListener("change", () => {
-		const imagePath = imagePicker.files[0].path;
 
-		// Open the audio and extract the ID3 data
-		// TODO: Put this in a method
-		// TODO: Don't use .replace
-		const audioPath = audioPlayer.src.replace("file:///", "");
-		const audioData = NodeID3.read(audioPath);
-		
-		// Update the image
-		audioData.image = imagePath;
-		NodeID3.write(audioData, audioPath);
+		const imagePath = imagePicker.files[0].path;
+		setTag("image", imagePath);
 	});
 
 });
@@ -29,13 +21,30 @@ document.querySelector(".title").addEventListener("change", () => {
 
 	// Get the new text content
 	const title = document.querySelector(".title").value;
+	setTag("title", title);
+});
+
+// Check for if the artist has been changed
+document.querySelector(".artist").addEventListener("change", () => {
+
+	// Get the new text content
+	const artist = document.querySelector(".artist").value;
+	setTag("artist", artist);
+});
+
+
+
+
+
+// Change an element in the ID3 tags of the song
+function setTag(tag, value) {
 
 	// Open the audio and extract the ID3 data
-	// TODO: Put this in a method
+	// TODO: Don't use .replace
 	const audioPath = audioPlayer.src.replace("file:///", "");
 	const audioData = NodeID3.read(audioPath);
 
-	// Update the title
-	audioData.title = title;
+	// Update the thing
+	audioData[tag] = value;
 	NodeID3.write(audioData, audioPath);
-});
+}
