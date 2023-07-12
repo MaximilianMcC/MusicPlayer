@@ -59,8 +59,17 @@ html {
   padding-top: 95px;
   text-align: center;
 }
-.music-player .right .song-info-wrapper .song-info h1 {
+.music-player .right .song-info-wrapper .song-info textarea {
   font-size: 30px;
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+  border: none;
+  color: #fde6e6;
+  font-weight: bold;
+  outline: none;
+  text-align: center;
+  resize: none;
 }
 .music-player .right .song-info-wrapper .song-info hr {
   height: 2px;

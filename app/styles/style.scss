@@ -68,8 +68,6 @@ html {
 	// Right section
 	.right {
 		background-color: $background-primary;
-						
-
 		position: relative;
 
 		// Title and artist information
@@ -84,8 +82,17 @@ html {
 				padding-top: 95px;
 				text-align: center;
 
-				h1 {
+				textarea {
 					font-size: 30px;
+					background-color: transparent;
+					width: 100%;
+					height: auto;
+					border: none;
+					color: $text;
+					font-weight: bold;
+					outline: none;
+					text-align: center;
+					resize: none;
 				}
 				// Divider thing
 				hr {

@@ -12,6 +12,8 @@ document.querySelector("img").addEventListener("click", () => {
 		const imagePath = imagePicker.files[0].path;
 
 		// Open the audio and extract the ID3 data
+		// TODO: Put this in a method
+		// TODO: Don't use .replace
 		const audioPath = audioPlayer.src.replace("file:///", "");
 		const audioData = NodeID3.read(audioPath);
 		
@@ -20,4 +22,20 @@ document.querySelector("img").addEventListener("click", () => {
 		NodeID3.write(audioData, audioPath);
 	});
 
+});
+
+// Check for if the title has been changed
+document.querySelector(".title").addEventListener("change", () => {
+
+	// Get the new text content
+	const title = document.querySelector(".title").value;
+
+	// Open the audio and extract the ID3 data
+	// TODO: Put this in a method
+	const audioPath = audioPlayer.src.replace("file:///", "");
+	const audioData = NodeID3.read(audioPath);
+
+	// Update the title
+	audioData.title = title;
+	NodeID3.write(audioData, audioPath);
 });

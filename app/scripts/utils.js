@@ -11,3 +11,11 @@ document.addEventListener("keydown", function (event) {
 	// ctrl + o
 	if (event.ctrlKey && event.key === "o") loadSong();
 });
+
+
+
+// Make the text area expand on the y as more content is added
+document.querySelector("textarea").addEventListener("input", (e) => {
+	const textarea = e.target;
+	textarea.style.height = `${textarea.scrollHeight}px`;
+});
