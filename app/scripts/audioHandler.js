@@ -7,8 +7,7 @@ function loadSong() {
 	fileInput.addEventListener("change", () => {
 		
 		// Get the path of the selected song
-		const file = fileInput.files[0];
-		const songPath = URL.createObjectURL(file);
+		const songPath = fileInput.files[0].path;
 
 		// Load the song
 		audioPlayer.src = songPath;
