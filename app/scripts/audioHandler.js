@@ -18,6 +18,9 @@ function loadSong() {
 		const base64Image = Buffer.from(tags.image.imageBuffer).toString("base64");
 		document.querySelector("img").src = `data:image/jpeg;base64,${base64Image}`;
 
+		// Add the title and artist to the DOM
+		document.querySelector(".title").innerHTML = tags.title;
+		document.querySelector(".artist").innerHTML = tags.artist;
 
 		// Get, then play the song
 		audioPlayer.src = songPath;
