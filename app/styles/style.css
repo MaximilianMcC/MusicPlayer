@@ -27,8 +27,8 @@ html {
 }
 .music-player .left .cover-image img {
   aspect-ratio: 1/1;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   border-radius: 6px;
 }
 .music-player .left .player-controls {

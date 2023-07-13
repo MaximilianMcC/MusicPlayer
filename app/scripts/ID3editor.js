@@ -1,4 +1,3 @@
-const NodeID3 = require("node-id3");
 
 // Check for if the picture has been clicked
 document.querySelector("img").addEventListener("click", () => {
