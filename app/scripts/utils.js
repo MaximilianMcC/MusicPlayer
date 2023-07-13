@@ -1,3 +1,6 @@
+const NodeID3 = require("node-id3");
+
+
 // Clamp a number between a minimum value and a maximum value
 function clamp(value, min, max) {
 
