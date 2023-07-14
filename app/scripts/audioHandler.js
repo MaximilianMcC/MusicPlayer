@@ -12,15 +12,40 @@ function loadSong() {
 
 		// Get the ID3 values
 		const tags = NodeID3.read(songPath);
-		console.log(tags.image);
+
+		// Create an error in a single message to make everything more organized
+		let errorMessage = "";
 
 		// Decode the image to base64 and add it to the DOM
-		const base64Image = Buffer.from(tags.image.imageBuffer).toString("base64");
-		document.querySelector("img").src = `data:image/jpeg;base64,${base64Image}`;
+		try {
+			const base64Image = Buffer.from(tags.image.imageBuffer).toString("base64");
+			document.querySelector("img").src = `data:image/jpeg;base64,${base64Image}`;
 
-		// Add the title and artist to the DOM
-		document.querySelector(".title").innerHTML = tags.title;
-		document.querySelector(".artist").innerHTML = tags.artist;
+		} catch {
+
+			errorMessage += "No album cover supplied. Using default one.\n";
+			document.querySelector("img").src = "../assets/img/default-cover.png";
+		}
+
+		// Add the title
+		if (tags.title !== undefined) document.querySelector(".title").innerHTML = tags.title;
+		else {
+			
+			// Use the filename
+			errorMessage += "No title supplied. Using filename\n";
+			document.querySelector(".title").innerHTML = path.basename(songPath, path.extname(songPath));
+		}
+
+		// Add the artist
+		if (tags.artist !== undefined) document.querySelector(".artist").innerHTML = tags.artist;
+		else {
+
+			errorMessage += "No artist supplied.\n";
+			document.querySelector(".artist").innerHTML = "No artist supplied.";
+		}
+
+		// Log the error messages
+		console.error(errorMessage);
 
 		// Get, then play the song
 		audioPlayer.src = songPath;

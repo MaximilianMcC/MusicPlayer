@@ -1,5 +1,5 @@
 const NodeID3 = require("node-id3");
-
+const path = require("path");
 
 // Clamp a number between a minimum value and a maximum value
 function clamp(value, min, max) {
@@ -17,7 +17,9 @@ document.addEventListener("keydown", function (event) {
 
 
 
+
 // Make the text area expand on the y as more content is added
+// TODO: Make this run when start up
 document.querySelector("textarea").addEventListener("input", (e) => {
 	const textarea = e.target;
 	textarea.style.height = `${textarea.scrollHeight}px`;
