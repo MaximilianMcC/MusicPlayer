@@ -21,14 +21,15 @@ html {
   color: #fde6e6;
 }
 .music-player .left {
-  background: rgb(37, 33, 85);
-  background: linear-gradient(254deg, rgb(37, 33, 85) 63%, rgb(23, 22, 36) 100%);
+  background: #252155;
+  background: linear-gradient(254deg, #252155 63%, #171624 100%);
   padding: 10px;
 }
 .music-player .left .cover-image img {
   aspect-ratio: 1/1;
   width: 100%;
   height: 100%;
+  background-color: #171624;
   border-radius: 6px;
 }
 .music-player .left .player-controls {
