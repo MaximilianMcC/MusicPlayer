@@ -13,6 +13,12 @@ function loadSong() {
 		// Get the ID3 values
 		const tags = NodeID3.read(songPath);
 
+		// Clear all of the values
+		// TODO: Maybe add image
+		// TODO: Don't reference title and artist and image multiple times. Store in variable
+		document.querySelector(".title").innerHTML = "";
+		document.querySelector(".artist").innerHTML = "";
+
 		// Create an error in a single message to make everything more organized
 		let errorMessage = "";
 
