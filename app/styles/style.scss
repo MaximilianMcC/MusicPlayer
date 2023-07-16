@@ -93,6 +93,7 @@ html {
 					outline: none;
 					text-align: center;
 					resize: none;
+					overflow-y: hidden;
 					
 					&.title {
 						font-size: 30px;

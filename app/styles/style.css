@@ -69,6 +69,7 @@ html {
   outline: none;
   text-align: center;
   resize: none;
+  overflow-y: hidden;
 }
 .music-player .right .song-info-wrapper .song-info textarea.title {
   font-size: 30px;
