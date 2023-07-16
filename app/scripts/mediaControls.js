@@ -41,15 +41,15 @@ audioPlayer.addEventListener("timeupdate", () => {
 // Update the progress bar when it's changed by the user
 progressBar.addEventListener("input", () => {
 
-    // Convert the new percentage into time in seconds
-    const totalDuration = musicPlayer.duration;
-    const newTime = (progressBar.value / 1000) * totalDuration;
+	// Convert the new percentage into time in seconds
+	const totalDuration = musicPlayer.duration;
+	const newTime = (progressBar.value / 1000) * totalDuration;
 
-    // Check for if the song has ended. If it has then play it again
-    if (musicPlayer.ended) musicPlayer.play();
+	// Check for if the song has ended. If it has then play it again
+	if (musicPlayer.ended) musicPlayer.play();
 
-    // Update the audio time
-    musicPlayer.currentTime = newTime;
+	// Update the audio time
+	musicPlayer.currentTime = newTime;
 });
 
 
@@ -57,10 +57,9 @@ progressBar.addEventListener("input", () => {
 // Check for if the user scrolls, then increase/decrease the volume
 const volumeIncrease = 0.02;
 window.addEventListener("wheel", (event) => {
-	
+
 	// Check for if the user is scrolling upwards or downwards
-	if (event.deltaY > 0)
-	{
+	if (event.deltaY > 0) {
 		// Decrease volume (scrolling down)
 		audioPlayer.volume = clamp((audioPlayer.volume - volumeIncrease), 0, 1);
 
@@ -69,4 +68,21 @@ window.addEventListener("wheel", (event) => {
 		// Increase volume (scrolling up)
 		audioPlayer.volume = clamp((audioPlayer.volume + volumeIncrease), 0, 1);
 	}
+});
+
+// Check for if the user presses the arrow keys to skip
+// TODO: Make the time skipped editable in settings (example, 5 seconds, 10 seconds, 30 seconds)
+window.addEventListener("keydown", (e) => {
+
+	// Convert the percentage into time in seconds
+	const totalDuration = musicPlayer.duration;
+	let newTime = (progressBar.value / 1000) * totalDuration;
+
+	// Detect for if they are pressing the arrow keys
+	const skipAmount = 10;
+	if (e.key === "ArrowLeft") newTime -= skipAmount;
+	if (e.key === "ArrowRight") newTime += skipAmount;
+
+	// Update the audio time
+	musicPlayer.currentTime = newTime;
 });
