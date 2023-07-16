@@ -74,15 +74,19 @@ window.addEventListener("wheel", (event) => {
 // TODO: Make the time skipped editable in settings (example, 5 seconds, 10 seconds, 30 seconds)
 window.addEventListener("keydown", (e) => {
 
-	// Convert the percentage into time in seconds
-	const totalDuration = musicPlayer.duration;
-	let newTime = (progressBar.value / 1000) * totalDuration;
+	// Check for if its an arrow key
+	if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
 
-	// Detect for if they are pressing the arrow keys
-	const skipAmount = 10;
-	if (e.key === "ArrowLeft") newTime -= skipAmount;
-	if (e.key === "ArrowRight") newTime += skipAmount;
-
-	// Update the audio time
-	musicPlayer.currentTime = newTime;
+		// Convert the percentage into time in seconds
+		const totalDuration = musicPlayer.duration;
+		let newTime = (progressBar.value / 1000) * totalDuration;
+	
+		// Detect for if they are pressing the arrow keys
+		const skipAmount = 10;
+		if (e.key === "ArrowLeft") newTime -= skipAmount;
+		if (e.key === "ArrowRight") newTime += skipAmount;
+	
+		// Update the audio time
+		musicPlayer.currentTime = newTime;
+	}
 });
