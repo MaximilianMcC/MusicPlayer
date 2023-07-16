@@ -19,6 +19,11 @@ function loadSong() {
 		document.querySelector(".title").innerHTML = "";
 		document.querySelector(".artist").innerHTML = "";
 
+		// Allow the title and subtitle to be edited. (cant edit if there is nothing loaded)
+		document.querySelectorAll("textarea").forEach(textarea => {
+			if (textarea.disabled == true) textarea.disabled = false;
+		});
+
 		// Create an error in a single message to make everything more organized
 		let errorMessage = "";
 
