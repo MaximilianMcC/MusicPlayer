@@ -74,9 +74,23 @@ html {
 		// Volume and hamburger section
 		.top-info {
 			padding: 5px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
 
 			.volume {
 				color: darken($text, 5%);
+				font-size: 15px;
+			}
+
+			.hamburger {
+				background-color: transparent;
+				border: none;
+				font-size: 30px;
+
+				svg path {
+					fill: $text;
+				}
 			}
 		}
 

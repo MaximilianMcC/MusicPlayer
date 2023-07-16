@@ -51,9 +51,21 @@ html {
 }
 .music-player .right .top-info {
   padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .music-player .right .top-info .volume {
   color: #fbcece;
+  font-size: 15px;
+}
+.music-player .right .top-info .hamburger {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+}
+.music-player .right .top-info .hamburger svg path {
+  fill: #fde6e6;
 }
 .music-player .right .song-info-wrapper {
   position: absolute;
