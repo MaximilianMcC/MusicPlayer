@@ -55,7 +55,8 @@ progressBar.addEventListener("input", () => {
 
 
 // Check for if the user scrolls, then increase/decrease the volume
-const volumeIncrease = 0.02;
+// TODO: Make this editable in config thing
+const volumeIncrease = 0.02; // 2 things per scroll 
 window.addEventListener("wheel", (event) => {
 
 	// Check for if the user is scrolling upwards or downwards
@@ -68,6 +69,12 @@ window.addEventListener("wheel", (event) => {
 		// Increase volume (scrolling up)
 		audioPlayer.volume = clamp((audioPlayer.volume + volumeIncrease), 0, 1);
 	}
+
+	// Change the volume in the DOM. First turn to percentage
+	// TODO: Make this update when the site first loads
+	// TODO: Maybe make the volume number fade out after a few seconds of it not being changed
+	const volume = Math.floor(audioPlayer.volume * 100);
+	document.querySelector(".volume").innerHTML = volume + "%";
 });
 
 // Check for if the user presses the arrow keys to skip

@@ -49,6 +49,12 @@ html {
   background-color: #132430;
   position: relative;
 }
+.music-player .right .top-info {
+  padding: 5px;
+}
+.music-player .right .top-info .volume {
+  color: #fbcece;
+}
 .music-player .right .song-info-wrapper {
   position: absolute;
   z-index: 99999;

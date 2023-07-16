@@ -71,6 +71,15 @@ html {
 		background-color: $background-primary;
 		position: relative;
 
+		// Volume and hamburger section
+		.top-info {
+			padding: 5px;
+
+			.volume {
+				color: darken($text, 5%);
+			}
+		}
+
 		// Title and artist information
 		.song-info-wrapper {
 			position: absolute;
