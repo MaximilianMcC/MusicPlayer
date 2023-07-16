@@ -20,10 +20,10 @@ function clamp(value, min, max) {
 
 
 // Check for if a keyboard shortcut is being pressed
-document.addEventListener("keydown", function (event) {
+document.addEventListener("keydown", (e) => {
 
 	// ctrl + o
-	if (event.ctrlKey && event.key === "o") loadSong();
+	if (e.ctrlKey && e.key === "o") loadSong();
 });
 
 
