@@ -1,5 +1,4 @@
 const audioPlayer = document.getElementById("musicPlayer");
-audioPlayer.src = "../assets/test.mp3";
 audioPlayer.volume = 0.5
 
 
