@@ -25,7 +25,6 @@ html {
 
 
 
-
 .music-player {
 	display: grid;
 	grid-template-columns: 1fr 1.3fr;
@@ -72,29 +71,11 @@ html {
 		background-color: $background-primary;
 		position: relative;
 
-		// Volume and hamburger section
-		.top-info {
+		// Volume
+		.volume {
 			padding: 5px;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			position: absolute;
-			z-index: 999999999;
-
-			.volume {
-				color: $text-dark;
-				font-size: 15px;
-			}
-
-			.hamburger {
-				background-color: transparent;
-				border: none;
-				font-size: 30px;
-
-				svg path {
-					fill: $text;
-				}
-			}
+			color: $text-dark;
+			font-size: 15px;
 		}
 
 		// Title and artist information
@@ -177,11 +158,25 @@ html {
 
 }
 
+// Hamburger menu
+.hamburger {
+	position: absolute;
+	right: 0;
+	z-index: 999999999999;
+	padding: 5px;
+	background-color: transparent;
+	border: none;
+	font-size: 30px;
+
+	svg path {
+		fill: $text;
+	}
+}
 
 // Settings pop out
 .settings-panel {
 	position: absolute;
-	z-index: 9999999999;
+	z-index: 9999999;
 	right: 0;
 	height: 100%;
 	width: 40%;
@@ -247,12 +242,24 @@ hr {
 
 // Slide in from the right
 @keyframes show-settings-panel {
-	0% { transform: translateX(110%); }
-	100% { transform: translateX(0); }
+	0% {
+		transform: translateX(110%);
+		opacity: 30%;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 100%;
+	}
 }
 
 // Side out from the right
 @keyframes hide-settings-panel {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(110%); }
+	0% {
+		transform: translateX(0);
+		opacity: 100%;
+	}
+	100% {
+		transform: translateX(110%);
+		opacity: 30%;
+	}
 }

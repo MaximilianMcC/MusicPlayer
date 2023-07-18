@@ -49,25 +49,10 @@ html {
   background-color: #132430;
   position: relative;
 }
-.music-player .right .top-info {
+.music-player .right .volume {
   padding: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: absolute;
-  z-index: 999999999;
-}
-.music-player .right .top-info .volume {
   color: #fbcece;
   font-size: 15px;
-}
-.music-player .right .top-info .hamburger {
-  background-color: transparent;
-  border: none;
-  font-size: 30px;
-}
-.music-player .right .top-info .hamburger svg path {
-  fill: #fde6e6;
 }
 .music-player .right .song-info-wrapper {
   position: absolute;
@@ -132,9 +117,22 @@ html {
   border-radius: 100%;
 }
 
+.hamburger {
+  position: absolute;
+  right: 0;
+  z-index: 999999999999;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+}
+.hamburger svg path {
+  fill: #fde6e6;
+}
+
 .settings-panel {
   position: absolute;
-  z-index: 9999999999;
+  z-index: 9999999;
   right: 0;
   height: 100%;
   width: 40%;
@@ -189,16 +187,20 @@ hr {
 @keyframes show-settings-panel {
   0% {
     transform: translateX(110%);
+    opacity: 30%;
   }
   100% {
     transform: translateX(0);
+    opacity: 100%;
   }
 }
 @keyframes hide-settings-panel {
   0% {
     transform: translateX(0);
+    opacity: 100%;
   }
   100% {
     transform: translateX(110%);
+    opacity: 30%;
   }
 }/*# sourceMappingURL=style.css.map */

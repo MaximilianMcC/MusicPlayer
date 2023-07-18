@@ -70,12 +70,15 @@ window.addEventListener("wheel", (event) => {
 		audioPlayer.volume = clamp((audioPlayer.volume + volumeIncrease), 0, 1);
 	}
 
-	// Change the volume in the DOM. First turn to percentage
-	// TODO: Make this update when the site first loads
-	// TODO: Maybe make the volume number fade out after a few seconds of it not being changed
+	// Change the volume in the DOM
+	displayVolume();
+});
+
+function displayVolume() {
+	// Convert the volume to a percentage
 	const volume = Math.floor(audioPlayer.volume * 100);
 	document.querySelector(".volume").innerHTML = volume + "%";
-});
+}
 
 // Check for if the user presses the arrow keys to skip
 // TODO: Make the time skipped editable in settings (example, 5 seconds, 10 seconds, 30 seconds)

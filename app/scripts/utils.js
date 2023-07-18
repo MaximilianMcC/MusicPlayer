@@ -10,12 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
 		updateTextarea(textarea);
 	});
 
+	// Update the volume
+	displayVolume();
+
 	// Add all of the keyboard shortcuts
 	const shortcutsList = document.querySelector(".keyboard-shortcuts");
 	const shortcuts = [
 		{
 			shortcut: ["Ctrl", "o"],
-			description: "Load song"
+			description: "Load Song"
 		},
 		{
 			shortcut: ["Alt", "F4"],
@@ -28,12 +31,20 @@ document.addEventListener("DOMContentLoaded", () => {
 		{
 			shortcut: ["⬅"],
 			description: "Skip Backwards"
+		},
+		{
+			shortcut: ["Scroll Up"],
+			description: "Increase Volume"
+		},
+		{
+			shortcut: ["Scroll Down"],
+			description: "Decrease Volume"
 		}
 	]
 	shortcuts.forEach(shortcut => {
 		
 		// Make the HTML
-		let shortcutHtml = shortcut["shortcut"].map(key => `<kbd>${key}</kbd>`).join(" + ");
+		const shortcutHtml = shortcut["shortcut"].map(key => `<kbd>${key}</kbd>`).join(" + ");
 		const html = `<div class="shortcut-item"><p class="shortcut">${shortcutHtml}</p><p>${shortcut["description"]}</p></div>`;
 
 		// Add the shortcut to the DOM
