@@ -9,6 +9,36 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.querySelectorAll("textarea").forEach(textarea => {
 		updateTextarea(textarea);
 	});
+
+	// Add all of the keyboard shortcuts
+	const shortcutsList = document.querySelector(".keyboard-shortcuts");
+	const shortcuts = [
+		{
+			shortcut: ["Ctrl", "o"],
+			description: "Load song"
+		},
+		{
+			shortcut: ["Alt", "F4"],
+			description: "Exit"
+		},
+		{
+			shortcut: ["⮕"],
+			description: "Skip Forwards"
+		},
+		{
+			shortcut: ["⬅"],
+			description: "Skip Backwards"
+		}
+	]
+	shortcuts.forEach(shortcut => {
+		
+		// Make the HTML
+		let shortcutHtml = shortcut["shortcut"].map(key => `<kbd>${key}</kbd>`).join(" + ");
+		const html = `<div class="shortcut-item"><p class="shortcut">${shortcutHtml}</p><p>${shortcut["description"]}</p></div>`;
+
+		// Add the shortcut to the DOM
+		shortcutsList.innerHTML += html;
+	});
 });
 
 
