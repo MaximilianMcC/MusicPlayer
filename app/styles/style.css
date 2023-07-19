@@ -46,7 +46,7 @@ html {
   fill: #fde6e6;
 }
 .music-player .right {
-  background-color: #132430;
+  background-image: linear-gradient(155deg, hsl(240, 49%, 13%) 0%, hsl(238, 50%, 14%) 12%, hsl(236, 50%, 15%) 24%, hsl(235, 50%, 15%) 36%, hsl(233, 50%, 16%) 48%, hsl(232, 50%, 17%) 60%, hsl(231, 50%, 18%) 71%, hsl(230, 51%, 19%) 81%, hsl(229, 51%, 19%) 91%, hsl(228, 51%, 20%) 100%);
   position: relative;
 }
 .music-player .right .volume {

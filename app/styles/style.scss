@@ -68,7 +68,20 @@ html {
 
 	// Right section
 	.right {
-		background-color: $background-primary;
+		// background-color: $background-primary;
+		background-image: linear-gradient(
+			155deg,
+			hsl(240deg 49% 13%) 0%,
+			hsl(238deg 50% 14%) 12%,
+			hsl(236deg 50% 15%) 24%,
+			hsl(235deg 50% 15%) 36%,
+			hsl(233deg 50% 16%) 48%,
+			hsl(232deg 50% 17%) 60%,
+			hsl(231deg 50% 18%) 71%,
+			hsl(230deg 51% 19%) 81%,
+			hsl(229deg 51% 19%) 91%,
+			hsl(228deg 51% 20%) 100%
+			);
 		position: relative;
 
 		// Volume
