@@ -39,13 +39,10 @@ function loadSong() {
 		}
 
 		// Add the title
-		if (tags.title !== undefined) document.querySelector(".title").innerHTML = tags.title;
-		else {
-			
-			// Use the filename
-			errorMessage += "No title supplied. Using filename\n";
-			document.querySelector(".title").innerHTML = path.basename(songPath, path.extname(songPath));
-		}
+		let title = path.basename(songPath, path.extname(songPath));
+		if (tags.title !== undefined) title = tags.title;
+		document.querySelector(".title").innerHTML = title;
+		
 
 		// Add the artist
 		if (tags.artist !== undefined) document.querySelector(".artist").innerHTML = tags.artist;
@@ -61,6 +58,9 @@ function loadSong() {
 		// Get, then play the song
 		audioPlayer.src = songPath;
 		play();
+
+		// Update the discord rich presence
+		setSongRichPresence(title);
 	});
 
 }
